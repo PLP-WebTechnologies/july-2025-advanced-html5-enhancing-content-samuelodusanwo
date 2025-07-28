@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Content & Forms Showcase - Beginner Assignment</title>
+    <meta name="description" content="A beginner-friendly HTML5 page demonstrating advanced content elements like lists, tables, media, and a fully featured form with native validation.">
+    <meta name="keywords" content="HTML5, forms, lists, tables, audio, video, images, validation, web development, beginner">
+    <meta name="author" content="Your Name">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <header role="banner">
+        <h1>Welcome to Our Interactive HTML5 Page!</h1>
+        <nav aria-label="Main Sections">
+            <ul>
+                <li><a href="#about-content">About Our Content</a></li>
+                <li><a href="#featured-media">Featured Media</a></li>
+                <li><a href="#feedback-form">Send Us Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-content" aria-labelledby="content-heading">
+            <h2 id="content-heading">Organized Information for You</h2>
+            <p>We've structured our content using various HTML5 elements to make it easy to read and understand.</p>
+
+            <h3>Our Top 3 Learning Resources (Ordered List)</h3>
+            <ol>
+                <li>MDN Web Docs: The ultimate resource for web technologies.</li>
+                <li>W3Schools: Great for quick examples and tutorials.</li>
+                <li>freeCodeCamp: Interactive lessons and projects to learn coding.</li>
+            </ol>
+
+            <h3>Basic Web Dev Glossary (Unordered List)</h3>
+            <ul>
+                <li>**HTML:** HyperText Markup Language, structures web content.</li>
+                <li>**CSS:** Cascading Style Sheets, styles web content.</li>
+                <li>**JavaScript:** Makes web pages interactive.</li>
+                <li>**DOM:** Document Object Model, a programming interface for HTML and XML documents.</li>
+            </ul>
+
+            <h3>Simple Data Table Example</h3>
+            <table border="1">
+                <caption>Monthly Learning Progress - June 2025</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Topic</th>
+                        <th scope="col">Hours Spent</th>
+                        <th scope="col">Projects Completed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">HTML5</th>
+                        <td>40</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CSS Basics</th>
+                        <td>35</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">JavaScript Intro</th>
+                        <td>50</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Total Learning Hours</td>
+                        <td>125</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="featured-media" aria-labelledby="media-heading">
+            <h2 id="media-heading">Explore Our Media Content</h2>
+            <figure>
+                <img src="images/coding-desk.jpg" alt="A clean desk with a laptop displaying code, a notebook, and a coffee cup, symbolizing a focused coding environment." title="My Coding Workspace" width="600" height="400">
+                <figcaption>A typical setup for a focused web developer.</figcaption>
+            </figure>
+
+            <h3>Listen to a Short Audio Clip</h3>
+            <audio controls>
+                <source src="audio/notification.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>An example of an embedded audio file.</p>
+
+            <h3>Watch a Quick Intro Video</h3>
+            <video controls width="640" height="360" poster="images/video-thumbnail.jpg">
+                <source src="video/intro-to-html.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>A short video explaining HTML basics (placeholder).</p>
+        </section>
+
+        <section id="feedback-form" aria-labelledby="form-heading">
+            <h2 id="form-heading">Tell Us What You Think! (HTML5 Form with Validation)</h2>
+            <p>Please fill out this form to send us your feedback. All fields marked with an asterisk (*) are required.</p>
+
+            <form action="/submit-feedback" method="POST">
+                <fieldset>
+                    <legend>Your Personal Information</legend>
+                    <p>
+                        <label for="full-name">Full Name: *</label>
+                        <input type="text" id="full-name" name="full_name" placeholder="John Doe" autocomplete="name" required minlength="3" maxlength="100">
+                    </p>
+                    <p>
+                        <label for="email">Email: *</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                    </p>
+                    <p>
+                        <label for="phone">Phone (optional):</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g., +2348012345678" autocomplete="tel" pattern="^\+?[0-9\s\-\(\)]{7,20}$">
+                        <small>Format: +234 80xxxxxxxx or 080xxxxxxxx</small>
+                    </p>
+                    <p>
+                        <label for="dob">Date of Birth: *</label>
+                        <input type="date" id="dob" name="dob" required max="2007-07-28"> </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your Feedback</legend>
+                    <p>
+                        <label for="feedback-type">Type of Feedback: *</label>
+                        <select id="feedback-type" name="feedback_type" required>
+                            <option value="">-- Please choose an option --</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="bug">Bug Report</option>
+                            <option value="question">Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="rating">How would you rate this page (1-5)? *</label>
+                        <input type="number" id="rating" name="rating" min="1" max="5" required placeholder="3">
+                    </p>
+                    <p>
+                        <label for="comments">Your Comments: *</label>
+                        <textarea id="comments" name="comments" rows="5" placeholder="Enter your detailed feedback here..." required minlength="10" maxlength="500"></textarea>
+                    </p>
+                    <p>
+                        Are you a returning visitor?
+                        <input type="radio" id="returning-yes" name="returning_visitor" value="yes">
+                        <label for="returning-yes">Yes</label>
+                        <input type="radio" id="returning-no" name="returning_visitor" value="no">
+                        <label for="returning-no">No</label>
+                    </p>
+                    <p>
+                        <label for="subscribe">
+                            <input type="checkbox" id="subscribe" name="subscribe" value="yes" checked>
+                            Subscribe to our newsletter
+                        </label>
+                    </p>
+                    <p>
+                        <label for="promo-code">Promo Code (if any):</label>
+                        <input type="text" id="promo-code" name="promo_code" value="WELCOME" readonly>
+                        <small>This field is read-only.</small>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit Feedback</button>
+                    <button type="reset">Reset Form</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; <time datetime="2025">2025</time> Your Name. All rights reserved. This page is for educational purposes.</p>
+        <address>
+            Contact: <a href="mailto:contact@example.com">contact@example.com</a>
+        </address>
+    </footer>
+
+</body>
+</html>
